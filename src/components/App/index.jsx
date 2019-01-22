@@ -12,6 +12,7 @@ class App extends Component {
       user: {
         photoUrl: 'https://du-cdn.multiscreensite.com/duda_website/img/social/fb_1.jpg',
         email: 'correo@correo.com',
+        displayName: 'Correo',
         onOpenText: false
       }
     }

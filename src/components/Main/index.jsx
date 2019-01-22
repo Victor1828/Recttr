@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+const uuid4 = require('uuid/v4')
 
 import InputText from '../InputText'
 import MessageList from '../MessageList'
@@ -8,32 +9,50 @@ class Main extends Component {
   constructor() {
     super()
     this.state = {
-      messages: [{
-        text: 'Mensaje de prueba',
-        picture: 'https://du-cdn.multiscreensite.com/duda_website/img/social/fb_1.jpg',
-        displayName: 'Victor Vega',
-        username: 'victorvega',
-        date: Date.now()
-      },
-      {
-        text: 'Mensaje de prueba 2',
-        picture: 'https://du-cdn.multiscreensite.com/duda_website/img/social/fb_1.jpg',
-        displayName: 'Victor Vega',
-        username: 'victorvega',
-        date: Date.now() - 600000
-      }],
+      messages: [],
       onOpenText: false
     }
+
+    this.handleOpenText = this.handleOpenText.bind(this)
+    this.handleSendText = this.handleSendText.bind(this)
+    this.handleCloseText = this.handleCloseText.bind(this)
   }
 
   handleOpenText(event) {
     event.preventDefault()
-    this.setState.onOpenText = true
+    this.setState({onOpenText: true})
+  }
+
+  handleCloseText(event) {
+    event.preventDefault()
+    this.setState({onOpenText: false})
+  }
+
+  handleSendText(event) {
+    event.preventDefault()
+    let msg = {
+      id: uuid4(),
+      text: event.target.text.value,
+      picture: this.props.user.photoUrl,
+      displayName: this.props.user.displayName,
+      username: this.props.user.email.split('@')[0],
+      date: Date.now()
+    }
+    
+    this.setState({
+      messages: this.state.messages.concat(msg),
+      onOpenText: false
+    })
   }
 
   renderOpenText() {
     if (this.state.onOpenText) {
-      return <InputText />
+      return (
+        <InputText
+          onSendText={this.handleSendText}
+          onCloseText={this.handleCloseText}
+        />
+      )
     }
   }
 

@@ -10,10 +10,10 @@ class MessageList extends Component {
   render() {
     return(
       <div className={styles.root}>
-        {this.props.messages.map((msg, i) => {
+        {this.props.messages.map(msg => {
           return (
             <Message
-              key={i}
+              key={msg.id}
               text={msg.text}
               picture={msg.picture}
               displayName={msg.displayName}
@@ -21,7 +21,7 @@ class MessageList extends Component {
               date={msg.date}
             />
           )
-        })}
+        }).reverse()}
       </div>
     )
   }

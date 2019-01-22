@@ -71,3 +71,27 @@ body {
   margin-right: 3em;
 }
 
+.profile_bar__root__3tPNR {
+  display: flex;
+  margin: 1em;
+  align-items: center;
+}
+
+.profile_bar__avatar__3zc-v {
+  border-radius:  50%;
+  width: 32px;
+  height: 32px;
+}
+
+.profile_bar__username__1oCC7 {
+  color: #666;
+}
+
+.profile_bar__button__3EEjI {
+  background-color: #2d84cc;
+  color: #fff;
+  border: 1px solid #1f6fb1;
+  border-radius: 5px;
+  margin: 0 1em;
+  padding: 0.5em 0.75em;
+}
