@@ -10,9 +10,10 @@ class MessageList extends Component {
   render() {
     return(
       <div className={styles.root}>
-        {this.props.messages.map(msg => {
+        {this.props.messages.map((msg, i) => {
           return (
-            <Message 
+            <Message
+              key={i}
               text={msg.text}
               picture={msg.picture}
               displayName={msg.displayName}

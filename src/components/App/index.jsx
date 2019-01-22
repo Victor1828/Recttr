@@ -10,7 +10,7 @@ class App extends Component {
     super()
     this.state = {
       user: {
-        photoUrl: 'https://pbs.twimg.com/profile_images/716722371638509568/WxiAbc-5_400x400.jpg',
+        photoUrl: 'https://du-cdn.multiscreensite.com/duda_website/img/social/fb_1.jpg',
         email: 'correo@correo.com',
         onOpenText: false
       }

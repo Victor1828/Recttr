@@ -1,3 +1,8 @@
+body {
+  margin: 0 auto;
+  background-color: #eee
+}
+
 .header__root__2P7EK {
   display: flex;
   background-color: #2d84cc;
@@ -13,10 +18,15 @@
   font-size: 14pt;
 }
 
+.message_list__root__2sPd3 {
+  margin: 0.5em;
+}
+
 .message__root__2dJDb {
   background-color: #fff;
   border: 1px solid #ccc;
-  border-radius: 0.5em;
+  border-radius: 5px;
+  margin: 0.5em;
   padding: 1em;
 }
 
